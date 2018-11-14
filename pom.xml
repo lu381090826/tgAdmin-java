@@ -8,8 +8,8 @@
     <version>0.1.2</version>
     <packaging>jar</packaging>
 
-    <name>watchDog-framework</name>
-    <description>watchDog-framework</description>
+    <name>tgWatchDog</name>
+    <description>tg-watchDog-admin</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -173,6 +173,20 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+
+        <!-- velocity 模板引擎, 默认 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <!-- freemarker 模板引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.28</version>
         </dependency>
 
     </dependencies>
