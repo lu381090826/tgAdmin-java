@@ -59,7 +59,12 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("cn.tg.wdog.core.mapper");
+        pc.setParent("cn.tg.wdog");
+        pc.setEntity("entity");
+        pc.setMapper("mapper");
+        pc.setService("service");
+        pc.setController("controller");
+        pc.setServiceImpl("service." + pc.getModuleName() + ".impl");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
