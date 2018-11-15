@@ -1,5 +1,6 @@
 package cn.tg.wdog.core.service.charitable.impl;
 
+import cn.tg.wdog.common.exception.RequestException;
 import cn.tg.wdog.core.dto.charitable.FindDonationOne2oneDTO;
 import cn.tg.wdog.core.entity.charitable.DonationOne2one;
 import cn.tg.wdog.core.mapper.charitable.DonationOne2oneMapper;
@@ -9,6 +10,7 @@ import cn.tg.wdog.core.vo.system.SysUserVO;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +44,26 @@ public class DonationOne2oneServiceImpl extends ServiceImpl<DonationOne2oneMappe
         BeanUtils.copyProperties(donationOne2onePage, one2oneVOPage);
 
         return one2oneVOPage;
+    }
+
+    /**
+     * 状态改变
+     *
+     * @param donationId 序号
+     * @param status     状态码
+     */
+    @Override
+    public void statusChange(String donationId, Integer status) {
+        DonationOne2one donationOne2one = this.selectById(donationId);
+        if (donationOne2one == null) {
+            throw RequestException.fail("该公益项目不存在");
+        }
+        donationOne2one.setStatus(status);
+        try {
+            this.updateById(donationOne2one);
+        } catch (Exception e) {
+            throw RequestException.fail("操作失败", e);
+        }
+
     }
 }

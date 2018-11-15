@@ -16,11 +16,18 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface IDonationOne2oneService extends IService<DonationOne2one> {
     /**
-     * 获取所有用户（分页）
+     * 获取所有一对一（分页）
      *
      * @param findDonationOne2oneDTO 过滤条件
      * @return RequestResult
      */
     Page<DonationOne2oneVO> getAllUserBySplitPage(FindDonationOne2oneDTO findDonationOne2oneDTO);
+
+    /**
+     * 状态改变
+     * @param donationId 序号
+     * @param status 状态码
+     */
+    void statusChange(String donationId, Integer status);
 
 }
