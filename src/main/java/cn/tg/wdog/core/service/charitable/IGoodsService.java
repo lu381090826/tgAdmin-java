@@ -5,7 +5,6 @@ import cn.tg.wdog.core.entity.charitable.DonationOne2one;
 import cn.tg.wdog.core.vo.system.DonationOne2oneVO;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>
@@ -15,15 +14,14 @@ import org.springframework.stereotype.Service;
  * @author gavinlu
  * @since 2018-11-14
  */
-@Service
-public interface IDonationOne2oneService extends IService<DonationOne2one> {
+public interface IGoodsService extends IService<DonationOne2one> {
     /**
      * 获取所有一对一（分页）
      *
      * @param findDonationOne2oneDTO 过滤条件
      * @return RequestResult
      */
-    Page<DonationOne2oneVO> getAllUserBySplitPage(FindDonationOne2oneDTO findDonationOne2oneDTO);
+    Page<DonationOne2oneVO> getAllBySplitPage(FindDonationOne2oneDTO findDonationOne2oneDTO);
 
     /**
      * 状态改变
