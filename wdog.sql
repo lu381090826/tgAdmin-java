@@ -263,7 +263,7 @@ CREATE TABLE `goods_sku` (
   `stock` int(11) NOT NULL COMMENT '库存',
   `shop_id` bigint(20) NOT NULL COMMENT '商铺id,为0表示自营',
   `spu_id` bigint(20) NOT NULL COMMENT 'spu_id',
-
+  `status` VARCHAR(45) NOT NULL DEFAULT 0 COMMENT '状态0-关闭 1开启'
   `create_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `modify_time` timestamp NOT NULL default CURRENT_TIMESTAMP  on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
