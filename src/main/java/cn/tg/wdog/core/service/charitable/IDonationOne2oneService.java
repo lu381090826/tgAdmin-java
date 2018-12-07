@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
  * @author gavinlu
  * @since 2018-11-14
  */
-@Service
 public interface IDonationOne2oneService extends IService<DonationOne2one> {
     /**
      * 获取所有一对一（分页）

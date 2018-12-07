@@ -1,6 +1,8 @@
 package cn.tg.wdog.core.service.goods;
 
 import cn.tg.wdog.core.dto.goods.FindSkuDTO;
+import cn.tg.wdog.core.dto.goods.SkuAddDTO;
+import cn.tg.wdog.core.dto.goods.SkuUpdateDTO;
 import cn.tg.wdog.core.entity.goods.Sku;
 import cn.tg.wdog.core.vo.system.SkuVO;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -26,9 +28,15 @@ public interface SkuService extends IService<Sku> {
     /**
      * 状态改变
      *
-     * @param id 序号
-     * @param status     状态码
+     * @param id     序号
+     * @param status 状态码
      */
     void statusChange(String id, Integer status);
+
+    void add(SkuAddDTO addDTO);
+
+    void update(String id, SkuUpdateDTO updateDTO);
+
+    Object findById(String id);
 
 }

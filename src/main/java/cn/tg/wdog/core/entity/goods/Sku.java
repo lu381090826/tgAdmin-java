@@ -1,11 +1,13 @@
 package cn.tg.wdog.core.entity.goods;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Date;
+
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+
 import java.io.Serializable;
 
 
@@ -24,8 +26,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("goods_sku")
 public class Sku extends Model<Sku> {
-
-    private static final long serialVersionUID = 1L;
 
     /**
      * sku编号,唯一
@@ -64,7 +64,8 @@ public class Sku extends Model<Sku> {
     /**
      * 状态0-关闭 1开启
      */
-    private String status;
+    @TableField("status")
+    private Integer status;
 
     @TableField("create_time")
     private Date createTime;
@@ -72,8 +73,14 @@ public class Sku extends Model<Sku> {
     @TableField("modify_time")
     private Date modifyTime;
 
-    private BigInteger id;
+    @TableId("id")
+    private String id;
 
+    @TableField("img")
+    private String img;
+
+    @TableField("units")
+    private String units;
 
     @Override
     protected Serializable pkVal() {

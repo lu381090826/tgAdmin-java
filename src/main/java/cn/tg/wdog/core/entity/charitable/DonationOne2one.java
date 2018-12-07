@@ -24,8 +24,6 @@ import lombok.experimental.Accessors;
 @TableName("donation_one2one")
 public class DonationOne2one extends Model<DonationOne2one> {
 
-    private static final long serialVersionUID = 1L;
-
     @TableId("donation_id")
     private String donationId;
 
