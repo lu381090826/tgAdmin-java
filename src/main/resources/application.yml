@@ -13,9 +13,9 @@ spring:
       max-lifetime: 1765000
       maximum-pool-size: 15
   redis:
-    host: 127.0.0.1
+    host: 120.79.191.116
     port: 6379
-    password:
+    password: asd123
     timeout: 10000
     pool:
       max-active: 10

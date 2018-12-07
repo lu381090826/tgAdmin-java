@@ -26,6 +26,7 @@ import cn.tg.wdog.common.bean.ResponseCode;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
 import org.apache.shiro.subject.Subject;
@@ -44,6 +45,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 @Transactional
+@Slf4j
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper,SysUser> implements SysUserService {
 
     @Autowired
@@ -307,6 +309,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper,SysUser> imple
             this.updateById(user);
             shiroService.clearAuthByUserId(user.getId(),true,true);
         }catch (Exception e){
+            log.error("resetPassword Exception",e);
             throw RequestException.fail(String.format("ID为 %s 的用户密码重置失败",resetPasswordDTO.getUid()),e);
         }
     }
