@@ -26,10 +26,21 @@ public class SkuUpdateDTO {
     private String skuName;
 
     /**
+     * simpleName
+     */
+    @NotNull(message = "simpleName不能为空")
+    private String simpleName;
+
+    @NotNull(message = "skuDetail不能为空")
+    private String skuDetail;
+    /**
      * 售价
      */
     @NotNull(message = "price不能为空")
     private BigDecimal price;
+
+    @NotNull(message = "price不能为空")
+    private BigDecimal originPrice;
 
     /**
      * 库存

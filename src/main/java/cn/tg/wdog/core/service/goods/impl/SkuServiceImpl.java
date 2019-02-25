@@ -78,7 +78,6 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
             sku.setModifyTime(new Date());
             sku.setShopId(0L);
             sku.setSpuId(0L);
-            sku.setSpuId((long) GoodsType.GOODS_TYPE_BOOK.getCode());
 
             this.insert(sku);
 
@@ -90,7 +89,20 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
 
     @Override
     public void update(String id, SkuUpdateDTO updateDTO) {
+        try {
+            Sku sku = new Sku();
+            BeanUtils.copyProperties(updateDTO, sku);
+            sku.setModifyTime(new Date());
+            sku.setShopId(0L);
+            sku.setSpuId(0L);
+            sku.setId(id);
 
+            this.updateById(sku);
+
+        } catch (Exception e) {
+            log.error("Exception", e);
+            throw RequestException.fail("添加失败", e);
+        }
     }
 
     @Override

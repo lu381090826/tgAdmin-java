@@ -35,9 +35,17 @@ public class SkuVO extends Model<SkuVO> {
     private String skuName;
 
     /**
+     * simpleName
+     */
+    private String simpleName;
+
+    private String skuDetail;
+
+    /**
      * 售价
      */
     private BigDecimal price;
+    private BigDecimal originPrice;
 
     /**
      * 库存

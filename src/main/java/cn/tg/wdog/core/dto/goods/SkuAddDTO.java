@@ -30,11 +30,25 @@ public class SkuAddDTO {
     @NotNull(message = "skuName不能为空")
     private String skuName;
 
+    @NotNull(message = "skuDetail不能为空")
+    private String skuDetail;
+
+    /**
+     * simpleName
+     */
+    @NotNull(message = "simpleName不能为空")
+    private String simpleName;
+
     /**
      * 售价
      */
     @NotNull(message = "price不能为空")
     private BigDecimal price;
+    /**
+     * 售价
+     */
+    @NotNull(message = "price不能为空")
+    private BigDecimal originPrice;
     /**
      * 售价
      */

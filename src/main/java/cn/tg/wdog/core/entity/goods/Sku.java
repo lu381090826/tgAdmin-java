@@ -40,9 +40,20 @@ public class Sku extends Model<Sku> {
     private String skuName;
 
     /**
+     * simple_name
+     */
+    @TableField("simple_name")
+    private String simpleName;
+
+    @TableField("sku_detail")
+    private String skuDetail;
+
+    /**
      * 售价
      */
     private BigDecimal price;
+
+    private BigDecimal originPrice;
 
     /**
      * 库存

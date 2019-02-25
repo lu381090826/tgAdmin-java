@@ -2,7 +2,8 @@ package cn.tg.wdog.common.bean;
 
 public enum GoodsType {
     GOODS_TYPE(0, "无"),
-    GOODS_TYPE_BOOK(1000001, "书");
+    GOODS_TYPE_BOOK(1000001, "书"),
+    GOODS_TYPE_MOBILE(2000001, "手机"),;
 
     GoodsType(int Code, String msg) {
         this.code = Code;
