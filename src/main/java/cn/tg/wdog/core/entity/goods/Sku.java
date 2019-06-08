@@ -55,6 +55,8 @@ public class Sku extends Model<Sku> {
 
     private BigDecimal originPrice;
 
+    private BigDecimal originPriceCn;
+
     /**
      * 库存
      */
@@ -89,6 +91,9 @@ public class Sku extends Model<Sku> {
 
     @TableField("img")
     private String img;
+
+    @TableField("img_small")
+    private String imgSmall;
 
     @TableField("units")
     private String units;

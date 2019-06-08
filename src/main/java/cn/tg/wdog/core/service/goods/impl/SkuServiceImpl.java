@@ -78,6 +78,7 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
             sku.setModifyTime(new Date());
             sku.setShopId(0L);
             sku.setSpuId(0L);
+            sku.setImgSmall(addDTO.getImg());
 
             this.insert(sku);
 

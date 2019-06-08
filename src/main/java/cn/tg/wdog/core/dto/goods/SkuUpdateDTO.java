@@ -42,6 +42,9 @@ public class SkuUpdateDTO {
     @NotNull(message = "price不能为空")
     private BigDecimal originPrice;
 
+    @NotNull(message = "originPriceCn不能为空")
+    private BigDecimal originPriceCn;
+
     /**
      * 库存
      */

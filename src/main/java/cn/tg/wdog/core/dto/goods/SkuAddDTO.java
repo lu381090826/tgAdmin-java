@@ -49,6 +49,10 @@ public class SkuAddDTO {
      */
     @NotNull(message = "price不能为空")
     private BigDecimal originPrice;
+
+    @NotNull(message = "originPriceCn不能为空")
+    private BigDecimal originPriceCn;
+
     /**
      * 售价
      */
